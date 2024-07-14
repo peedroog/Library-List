@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+## Aplicación de Librería
+Esta es una aplicación de una librería en la que puedes seleccionar tu lista de lectura. La gestión del estado entre los componentes se realiza de diferentes maneras en las distintas ramas del proyecto.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Ramas del Proyecto
+### Master
+En la rama master, todos los componentes están en bookcard.jsx. Aquí, la lógica y los elementos visuales están juntos en un solo archivo, lo que puede ser conveniente para proyectos pequeños o para desarrolladores que prefieren tener todo en un solo lugar.
 
-## Available Scripts
+### EstadoEnElPadre
+En la rama EstadoEnElPadre, el padre gestiona el estado, separando la lógica de los elementos visuales. Esto significa que los componentes hijos son responsables únicamente de la presentación, mientras que el componente padre maneja la lógica y el estado. Esta separación puede facilitar el mantenimiento y la escalabilidad de la aplicación.
 
-In the project directory, you can run:
+### Contexto
+En la rama contexto, se utiliza un Context para gestionar el estado de los componentes. El uso de Context permite compartir el estado de manera eficiente entre múltiples componentes sin necesidad de pasar propiedades manualmente a través de cada nivel del árbol de componentes. Esta técnica es útil para aplicaciones más grandes y complejas donde el estado global debe ser accesible por muchos componentes.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Beneficios de Cada Enfoque
+- Master: Mantiene todo en un solo archivo, lo que puede ser más fácil de manejar para proyectos pequeños.
+- EstadoEnElPadre: Separa la lógica de la presentación, facilitando el mantenimiento y la escalabilidad.
+- Contexto: Permite compartir el estado global entre múltiples componentes sin necesidad de pasar propiedades manualmente, ideal para aplicaciones grandes y complejas.

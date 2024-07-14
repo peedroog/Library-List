@@ -1,11 +1,15 @@
 import './App.css';
 import BookList from './components/BookList';
 import ReadingList from './components/ReadingList';
-import {useEffect, useState} from 'react'
+import {createContext, useEffect, useState} from 'react'
 import ReadingListCounter from './components/ReadingListCounter';
 import {booksMock} from './mocks/books'
 
+export const LibraryContext = createContext();
+
 function App() {
+
+
 
   const [readingList, setReadingList] = useState([]);
   const [books, setBooks] = useState([]);
@@ -47,9 +51,12 @@ function App() {
 
   return (
     <div className="App">
-      <ReadingListCounter books={books} readingList={readingList}/>
-      <BookList books={books} addToReadingList={addToReadingList}/>
-      <ReadingList readingList={readingList} removeFromReadingList={removeFromReadingList}/>
+      <LibraryContext.Provider value={{books, readingList, addToReadingList, removeFromReadingList}}>
+        <ReadingListCounter/>
+        <BookList/>
+        <ReadingList/>
+      </LibraryContext.Provider>
+
     </div>
   );
 }

@@ -1,4 +1,10 @@
-function ReadingList({readingList, removeFromReadingList}){
+import { useContext } from "react";
+import { LibraryContext } from "../App";
+
+function ReadingList(){
+
+    const {readingList, removeFromReadingList} = useContext(LibraryContext);
+    
     return(
         <div className="reading-list">
         <h2>Lista de lectura</h2>

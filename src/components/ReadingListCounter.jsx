@@ -1,4 +1,9 @@
-function ReadingListCounter({books, readingList}){
+import { useContext } from "react";
+import { LibraryContext } from "../App";
+
+function ReadingListCounter(){
+
+    const {readingList, books} = useContext(LibraryContext);
     return(
         <div className="reading-list-counter">
             <h1>{books.length} libros en la lista</h1>

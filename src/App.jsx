@@ -4,6 +4,7 @@ import ReadingList from './components/ReadingList';
 import {createContext, useEffect, useState} from 'react'
 import ReadingListCounter from './components/ReadingListCounter';
 import {booksMock} from './mocks/books'
+import { getBooks } from './services/BooksService';
 
 export const LibraryContext = createContext();
 
@@ -15,29 +16,24 @@ function App() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
+    const booksFromLocal = window.localStorage.getItem("ReadingList");
+    if (booksFromLocal) {
+      setReadingList(JSON.parse(booksFromLocal));
+    }
     getBook();
     }, []);
 
 
-  function getBook(){
-    const bookFromJson = booksMock
-    setBooks(bookFromJson.library)
-    /*fetch('https://mpa56af7e152431ae8ac.free.beeceptor.com/data')
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }else{
-            throw new Error('Something went wrong');
-        }
-        })
-        .then(data => setBooks(data.library))
-        .catch(error => console.error("Error:", error))*/
+  async function getBook(){
+      getBooks()
+      .then(books => setBooks(books));
     }
 
     function addToReadingList(book){
       if(!readingList.find((item) => item.book.ISBN === book.book.ISBN)){
           setReadingList([...readingList, book])
           console.log(readingList);
+          window.localStorage.setItem("ReadingList", JSON.stringify([...readingList, book]));
       }else{
           alert("El libro " + book.book.title + " ya está en la lista de lectura.")
       }
@@ -46,6 +42,7 @@ function App() {
   function removeFromReadingList(b){
       const updatedList = readingList.filter((book) => book.book.ISBN !== b.book.ISBN);
       setReadingList(updatedList);
+      window.localStorage.setItem("ReadingList", JSON.stringify(updatedList));
   }
   
 

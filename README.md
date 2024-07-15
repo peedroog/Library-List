@@ -1,6 +1,5 @@
 ## Aplicación de Librería
 Esta es una aplicación de una librería en la que puedes seleccionar tu lista de lectura. La gestión del estado entre los componentes se realiza de diferentes maneras en las distintas ramas del proyecto.
-El proyecto está desplegado en la siguiente url: https://library-list-ee214thke-pedro-gramckos-projects.vercel.app/
 
 ## Ramas del Proyecto
 ### Master

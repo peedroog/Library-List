@@ -1,4 +1,114 @@
+/* App.css */
+
+/* Estilo general de la aplicación */
 .App {
-  background-color: pink;
+  font-family: Arial, sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+/* Contenedor para organizar la lista de libros y la lista de lectura */
+.content {
+  display: flex;
+  justify-content: space-between; /* Distribuir los elementos a lo largo del contenedor */
+  align-items: flex-start; /* Alinear elementos en la parte superior */
+  width: 100%;
+  gap: 20px;
+}
+
+/* Estilo para la lista de libros */
+.book-card__image {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Mostrar las tarjetas en filas de 4 en 4 */
+  gap: 20px;
+}
+
+/* Estilo para la tarjeta de cada libro */
+.book-card__cover {
+  width: 170px; /* tamaño más grande */
+  height: 240px; /* tamaño más grande */
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.book-card__cover:hover {
+  transform: scale(1.1);
+}
+
+.book-card__cover--opaque {
+  opacity: 0.1;
+}
+
+/* Estilo para la lista de lectura */
+.reading-list {
+  flex: 0.7; /* Más estrecha */
+  background-color: #040d1f;
+  padding: 10px; /* Reducir padding */
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Mostrar las tarjetas en filas de 4 en 4 */
+  gap: 10px; /* Reducir el espacio entre las tarjetas */
+  border: 0.5px solid white;
+}
+
+.reading-list h2 {
+  margin: 20px auto;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: white;
+  grid-column: span 4; /* Hacer que el título ocupe todo el ancho */
+}
+
+.reading-list__item {
+  display: flex;
+  flex-direction: column; /* Cambiar a columna para alinear verticalmente la imagen y el texto */
+  align-items: center;
+  gap: 5px; /* Reducir el espacio entre la imagen y el texto */
+  margin-bottom: 10px;
+}
+
+.reading-list__item img {
+  width: 100px; /* tamaño más grande */
+  height: 150px; /* tamaño más grande */
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Estilo para el contador de la lista de lectura */
+.reading-list-counter {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  grid-column: span 4; /* Hacer que el contador ocupe todo el ancho */
+}
+
+.reading-list-counter h1 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.reading-list-counter h3 {
+  font-size: 18px;
+  color: lightgray;
+}
+
+.genre-filter {
+  margin-bottom: 20px;
+}
+
+.genre-filter label {
+  margin-right: 10px;
+}
+
+.genre-filter select {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #6b6e6e;
+  color: white;
+  font-size: 16px;
+}

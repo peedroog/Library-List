@@ -1,5 +1,6 @@
 import { useContext } from 'react';
-import { LibraryContext } from '../App';
+import { LibraryContext } from '../pages/Home';
+
 
 function BookCard({ book }) {
   const { addToReadingList, readingList } = useContext(LibraryContext);

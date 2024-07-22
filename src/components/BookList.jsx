@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import BookCard from "./BookCard";
-import { LibraryContext } from "../App";
 import GenreFilter from "./GenreFilter";
+import { LibraryContext } from "../pages/Home";
 
 function BookList() {
   const { books } = useContext(LibraryContext);
